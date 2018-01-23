@@ -1,6 +1,6 @@
 {
   "name": "hot-reload",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Node hot-reload for backend.",
   "repository": {
     "url": "zcong1993/hot-reload",
