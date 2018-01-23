@@ -1,14 +1,14 @@
 
 # hot-reload
 
-[![NPM version](https://img.shields.io/npm/v/hot-reload.svg?style=flat)](https://npmjs.com/package/hot-reload) [![NPM downloads](https://img.shields.io/npm/dm/hot-reload.svg?style=flat)](https://npmjs.com/package/hot-reload) [![CircleCI](https://circleci.com/gh/zcong1993/hot-reload/tree/master.svg?style=shield)](https://circleci.com/gh/zcong1993/hot-reload/tree/master)  [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/zcong1993/donate)
+[![NPM version](https://img.shields.io/npm/v/@zcong/hot-reload.svg?style=flat)](https://npmjs.com/package/@zcong/hot-reload) [![NPM downloads](https://img.shields.io/npm/dm/@zcong/hot-reload.svg?style=flat)](https://npmjs.com/package/@zcong/hot-reload) [![CircleCI](https://circleci.com/gh/zcong1993/hot-reload/tree/master.svg?style=shield)](https://circleci.com/gh/zcong1993/hot-reload/tree/master)  [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/zcong1993/donate)
 
 > just a demo, use [nodemon](https://github.com/remy/nodemon)
 
 ## Install
 
 ```bash
-$ yarn global add hot-reload
+$ yarn global add @zcong/hot-reload
 ```
 
 ## Usage

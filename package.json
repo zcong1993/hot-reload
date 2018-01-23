@@ -1,5 +1,5 @@
 {
-  "name": "hot-reload",
+  "name": "@zcong/hot-reload",
   "version": "0.0.1",
   "description": "Node hot-reload for backend.",
   "repository": {
