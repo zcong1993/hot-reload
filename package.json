@@ -1,0 +1,44 @@
+{
+  "name": "hot-reload",
+  "version": "0.0.0",
+  "description": "my sublime project",
+  "repository": {
+    "url": "zcong1993/hot-reload",
+    "type": "git"
+  },
+  "main": "index.js",
+  "bin": "cli.js",
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "scripts": {
+    "test": "npm run lint && jest",
+    "lint": "xo"
+  },
+  "author": "zcong1993 <1005997919@qq.com>",
+  "license": "MIT",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "cfork": "^1.7.1",
+    "chokidar": "^2.0.0",
+    "cluster-reload": "^1.0.2",
+    "log-color-utils": "^0.1.1",
+    "minimist": "^1.2.0",
+    "tildify": "^1.2.0"
+  },
+  "devDependencies": {
+    "debug": "^3.1.0",
+    "eslint-config-rem": "^3.0.0",
+    "jest-cli": "^19.0.0",
+    "xo": "^0.18.0"
+  },
+  "xo": {
+    "extends": "rem",
+    "envs": [
+      "jest"
+    ]
+  }
+}
