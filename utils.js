@@ -4,15 +4,12 @@ exports.min = (...nums) => {
   return nums.sort()[0]
 }
 
-exports.info = str => {
-  const info = `${color.chalk.blue('info')} ${str}`
-  console.log(info)
-}
+exports.info = (...args) => console.log(color.info(...args))
 
 exports.logPad = color.logPad
 
 exports.yellow = color.chalk.yellow
 
-exports.error = color.error
+exports.error = color.bgError
 
-exports.warning = color.warning
+exports.warning = (...args) => console.log(color.bgWarning(...args))

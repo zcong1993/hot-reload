@@ -16,7 +16,7 @@ const normalizeOpts = argv => {
   }
   const short = argv._[0]
   copy.exec = path.resolve(process.cwd(), short)
-  copy.cluster = ~~argv.cluster ? min(~~argv.cluster, os.cpus().length) : min(os.cpus().length, 2)
+  copy.cluster = ~~argv.cluster ? min(~~argv.cluster, os.cpus().length) : min(os.cpus().length, 1)
   copy.context = argv.context ? path.resolve(process.cwd(), argv.context) : process.cwd()
   info(`use ${yellow(short)} as entry file.`)
   info(`use ${yellow(copy.cluster)} cluster.`)

@@ -1,8 +1,9 @@
+const cluster = require('cluster')
 const reload = require('cluster-reload')
 const { FSWatcher } = require('chokidar')
-const cfork = require('cfork')
 const debug = require('debug')('reload')
 const tildify = require('tildify')
+const manager = require('./manager')
 const { info, warning } = require('./utils')
 
 let reloading = false
@@ -28,14 +29,17 @@ const run = argv => {
 
   watcher.on('ready', () => {
     info('watcher ready')
-    const cluster = cfork({
+    manager({
       exec: argv.exec,
-      count: argv.cluster,
-      refork: false
+      args: argv.args,
+      nums: argv.cluster,
+      onExit: (worker, _, signal, suicide) => {
+        warning(`worker ${worker.id} exit ${suicide ? 'suicide' : ''} with signal ${signal}.`)
+      }
     })
     info('cluster start')
-    cluster.on('unexpectedExit', (worker, code) => {
-      console.log(warning(`worker ${worker.id} exit with code ${code}.`))
+    cluster.on('fork', worker => {
+      info(`work ${worker.id} start`)
     })
   })
 
