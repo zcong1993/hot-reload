@@ -4,7 +4,7 @@ const { FSWatcher } = require('chokidar')
 const debug = require('debug')('reload')
 const tildify = require('tildify')
 const manager = require('./manager')
-const { info, warning } = require('./utils')
+const { info, warning, logErr } = require('./utils')
 
 let reloading = false
 
@@ -12,7 +12,7 @@ const run = argv => {
   debug(argv)
   const watcher = new FSWatcher({
     useFsEvents: process.env.NODE_ENV !== 'test',
-    ignored: '**/node_modules'
+    ignored: ['**/node_modules/**', '**/.git/**'].concat(argv.ignored)
   })
     .add(argv.context)
 
@@ -34,7 +34,8 @@ const run = argv => {
       args: argv.args,
       nums: argv.cluster,
       onExit: (worker, _, signal, suicide) => {
-        warning(`worker ${worker.id} exit ${suicide ? 'suicide' : ''} with signal ${signal}.`)
+        const log = suicide ? warning : logErr
+        log(`worker ${worker.id} exit with signal ${signal}.`)
       }
     })
     info('cluster start')

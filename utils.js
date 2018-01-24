@@ -12,4 +12,6 @@ exports.yellow = color.chalk.yellow
 
 exports.error = color.bgError
 
+exports.logErr = (...args) => console.log(color.bgError(...args))
+
 exports.warning = (...args) => console.log(color.bgWarning(...args))
