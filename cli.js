@@ -4,7 +4,7 @@ const os = require('os')
 const parseArgs = require('minimist')
 const tildify = require('tildify')
 const { min, info, logPad, yellow, error } = require('./utils')
-const run = require('./')
+const { run } = require('./')
 
 const argv = parseArgs(process.argv.slice(2))
 

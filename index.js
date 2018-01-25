@@ -52,4 +52,11 @@ const run = argv => {
   })
 }
 
-module.exports = run
+const stop = () => {
+  process.emit('SIGINT')
+}
+
+module.exports = {
+  run,
+  stop
+}

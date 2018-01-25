@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 const axios = require('axios')
-const run = require('../')
+const { run, stop } = require('../')
 
 const entryPath = path.join(__dirname, 'fixture/app.js')
 const port = 9988
@@ -54,4 +54,5 @@ test('should reload after modify file', async () => {
   await delay(1000)
   const res2 = await axios.get(url)
   expect(res2.data).toBe('hello koa')
+  stop()
 })
