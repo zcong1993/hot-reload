@@ -16,7 +16,8 @@
   ],
   "scripts": {
     "test": "npm run lint && jest",
-    "lint": "xo"
+    "lint": "xo",
+    "jest": "jest"
   },
   "author": "zcong1993 <1005997919@qq.com>",
   "license": "MIT",
@@ -31,9 +32,12 @@
     "tildify": "^1.2.0"
   },
   "devDependencies": {
+    "@types/jest": "^22.1.0",
+    "axios": "^0.17.1",
     "debug": "^3.1.0",
     "eslint-config-rem": "^4.0.0",
     "jest-cli": "^22.1.4",
+    "koa": "^2.4.1",
     "xo": "^0.18.2"
   },
   "xo": {
